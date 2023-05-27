@@ -13,6 +13,12 @@
 # ноутбук
 #     12
 
+import subprocess
+import os
+import random
+
+subprocess.call('clear' if os.name =='posix' else 'cls', shell=True)    # Очистка консоли
+
 d = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R': 1, 
      'D': 2, 'G': 2,
      'B': 3, 'C': 3, 'M': 3, 'P': 3,
@@ -30,6 +36,11 @@ d = {'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R'
 
 word = input("Введи слово: ")
 
-langht = len(word)
+lenght = len(word)
+sum = 0
 
-print(langht)
+for i in range(lenght):
+    sum += d[word[i].upper()]
+
+
+print(sum)
