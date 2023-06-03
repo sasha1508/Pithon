@@ -14,12 +14,13 @@ A = int(input("Введи число A: "))
 B = int(input("Введи число B: "))
 
 def stepen(A, B):
-    if B == 1: return A
+    if B == 0: return 1
+    elif B == 1: return A
     return stepen(A, B - 1) * A
 
-if A < 1 or B < 1:
+if A < 0 or B < 0:
     print()
-    print("Необходимо ввести число больше нуля!")
+    print("Необходимо ввести неотрицательное число!")
     print
 else:
     otvet = stepen(A, B)
